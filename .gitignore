@@ -1,0 +1,8 @@
+# Book build output
+docs/build/
+
+# Vim undo files. Python#
+# #######################
+*.un~
+*.pyc
+*.swp
