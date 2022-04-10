@@ -1,11 +1,11 @@
 # Python для мережевих інженерів
 
-* [Английская версия книги](https://pyneng.readthedocs.io/en/latest/)
-* [Русская версия книги](https://pyneng.readthedocs.io/ru/latest/)
+* [English version](https://pyneng.readthedocs.io/en/latest/)
+* [Русская версия](https://pyneng.readthedocs.io/ru/latest/)
 
-## Дополнительные ресурсы
+## Додаткові ресурси
 
-* [Задания к книге/курсу](https://github.com/natenka/pyneng-examples-exercises)
-* [Подборка ресурсов](https://natenka.github.io/pyneng-resources/)
-* [Что посмотреть, если мои лекции не подходят](https://natenka.github.io/pyneng/pyneng-course/)
+* [Завдання до книги/курсу](https://github.com/natenka/pyneng-examples-exercises)
+* [Добірка ресурсів](https://natenka.github.io/pyneng-resources/)
+* [Що подивитись, якщо мої лекції не підходять](https://natenka.github.io/pyneng/pyneng-course/)
 
