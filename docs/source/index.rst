@@ -17,7 +17,7 @@ Python для мережевих інженерів
 .. toctree::
    :maxdepth: 2
 
-   intro_index
+   about
    book_links
    book/Part_I
    book/Part_II
