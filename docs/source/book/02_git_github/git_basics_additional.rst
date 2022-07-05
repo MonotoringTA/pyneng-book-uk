@@ -4,50 +4,47 @@
 git diff
 ''''''''
 
-Команда git diff позволяет посмотреть разницу между различными
-состояниями. Например, на данный момент, в репозитории внесены изменения
-в файл README и .gitignore.
+Команда git diff дозволяє переглянути різницю між різними станами. Наприклад,
+на даний момент в репозиторії внесені зміни до файлу README і .gitignore.
 
-Команда git status показывает, что оба файла изменены
+Команда git status показує, що обидва файли змінені
+
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_status_5.png
 
-Команда git diff показывает, какие изменения были внесены с момента
-последнего коммита
+Команда git diff показує, які зміни було внесено з моменту останнього комміту
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_diff.png
 
-Если добавить изменения, внесённые в файлы, в staging командой ``git add`` и
-ещё раз выполнить команду ``git diff``, то она ничего не покажет
+Якщо додати зміни, внесені до файлів, в staging командою ``git add`` і ще раз
+виконати команду ``git diff``, вона нічого не покаже
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_add_git_diff.png
 
-Чтобы показать отличия между staging и последним коммитом, надо добавить
-параметр ``--staged``
+Щоб показати відмінності між staging та останнім коммітом, треба додати параметр ``--staged``
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_diff_staged.png
 
-Закоммитим изменения
+Закомітити зміни
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_commit_2.png
 
 git log
 '''''''
 
-Команда git log показывает, когда были выполнены последние изменения
+Команда git log показує, коли було виконано останні зміни
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_log.png
 
-По умолчанию команда показывает все коммиты, начиная с ближайшего по
-времени. С помощью дополнительных параметров можно не только посмотреть
-информацию о коммитах, но и то, какие именно изменения были внесены.
+За замовчуванням команда показує всі комміти, починаючи з найближчого часу. За
+допомогою додаткових параметрів можна не тільки переглянути інформацію про
+коміти, але й те, які зміни були внесені.
 
-Флаг ``-p`` позволяет отобразить отличия, которые были внесены каждым
-коммитом
+Опція ``-p`` дозволяє відобразити відмінності, внесені кожним коммітом.
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_log_p.png
 
-Более короткий вариант вывода можно вывести с флагом ``--stat``
+Коротший варіант можна вивести з опцією ``--stat``
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_log_stat.png
 
