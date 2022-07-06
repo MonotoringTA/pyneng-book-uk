@@ -4,22 +4,20 @@
 
 .. _start_index:
 
-3. Начало работы с Python
+3. Початок роботи з Python
 ============================
 
-
-В этом разделе рассматриваются:
+У цьому розділі розглядаються:
 
 -  синтаксис Python
--  работа в интерактивном режиме
--  переменные в Python
-
+-  робота в інтерактивному режимі
+-  змінні в Python
 
 .. toctree::
    :maxdepth: 1
 
-   0_syntax
-   1_ipython
-   1a_ipython_magic
-   2_variables
+   syntax
+   ipython
+   ipython_magic
+   variables
    ../../exercises/03_exercises

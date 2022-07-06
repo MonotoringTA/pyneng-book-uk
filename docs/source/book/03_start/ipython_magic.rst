@@ -1,14 +1,15 @@
-Специальные команды ipython
+Спеціальні команди ipython
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-В IPython есть специальные команды, которые упрощают работу
-с интерпретатором. Все они начинаются со знака процента.
+У IPython є спеціальні команди, які полегшують роботу з інтерпретатором. Усі
+вони починаються зі знака відсотка.
+
 
 %history
 ''''''''
 
-Например, команда ``%history`` позволяет просмотреть историю введённых пользователем
-команд в текущей сессии IPython:
+Наприклад, команда ``%history`` дозволяє переглянути історію введених користувачем
+команд у поточній сесії IPython:
 
 .. code:: python
 
@@ -28,28 +29,27 @@
         print("A is bigger")
     %history
 
-С помощью %history можно скопировать нужный блок кода.
+За допомогою %history можна скопіювати потрібний блок коду.
 
 
 %time
 '''''
 
-Команда ``%time`` показывает сколько секунд выполнялось выражение:
+Команда ``%time`` показує скільки секунд виконувався вираз:
 
 .. code:: python
 
-    In [5]: import subprocess
+    import subprocess
 
-    In [6]: def ping_ip(ip_address):
-        ..:     reply = subprocess.run(['ping', '-c', '3', '-n', ip_address],
-        ..:                            stdout=subprocess.PIPE,
-        ..:                            stderr=subprocess.PIPE,
-        ..:                            encoding='utf-8')
-        ..:     if reply.returncode == 0:
-        ..:         return True
-        ..:     else:
-        ..:         return False
-        ..:
+    def ping_ip(ip_address):
+        reply = subprocess.run(['ping', '-c', '3', '-n', ip_address],
+                               stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE,
+                               encoding='utf-8')
+        if reply.returncode == 0:
+            return True
+        else:
+            return False
 
     In [7]: %time ping_ip('8.8.8.8')
     CPU times: user 0 ns, sys: 4 ms, total: 4 ms
@@ -70,11 +70,11 @@
 
 
 
-Подробнее об IPython можно почитать в
-`документации <http://ipython.readthedocs.io/en/stable/index.html>`__
-IPython.
 
-Коротко информацию можно посмотреть в самом IPython командой %quickref:
+Докладніше про IPython можна прочитати в `документації
+<http://ipython.readthedocs.io/en/stable/index.html>`__ IPython.
+
+Коротко інформацію можна переглянути в самому IPython командою %quickref:
 
 ::
 
