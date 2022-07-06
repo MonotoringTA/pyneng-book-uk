@@ -31,31 +31,38 @@ Python поддерживает специальные выражения, ко�
 List comprehensions (генераторы списков)
 ----------------------------------------
 
-Генератор списка - это выражение вида:
+Генератор списка (list comprehensions или list comp) - это выражение вида:
 
 .. code:: python
 
-    In [1]: vlans = [f'vlan {num}' for num in range(10,16)]
+    vlans = [int(vl) for vl in items]
 
-    In [2]: print(vlans)
-    ['vlan 10', 'vlan 11', 'vlan 12', 'vlan 13', 'vlan 14', 'vlan 15']
-
-В общем случае, это выражение, которое преобразует итерируемый объект в
-список. То есть, последовательность элементов преобразуется и
-добавляется в новый список.
-
-Выражению выше аналогичен такой цикл:
+Список items:
 
 .. code:: python
 
-    In [3]: vlans = []
+    items = ["10", "20", "30", "1", "11", "100"]
 
-    In [4]: for num in range(10,16):
-       ...:     vlans.append(f'vlan {num}')
-       ...:
+В общем случае, list comprehension это выражение, которое преобразует
+итерируемый объект в список. То есть, последовательность элементов
+преобразуется и добавляется в новый список.
 
-    In [5]: print(vlans)
-    ['vlan 10', 'vlan 11', 'vlan 12', 'vlan 13', 'vlan 14', 'vlan 15']
+List comp выше аналогичен такой цикл:
+
+.. code:: python
+
+    items = ["10", "20", "30", "1", "11", "100"]
+
+    vlans = []
+    for vl in items:
+        vlans.append(int(vl))
+
+    print(vlans)
+    # [10, 20, 30, 1, 11, 100]
+
+Соответствие между обычным циклом и генератором списка:
+
+.. figure:: https://raw.githubusercontent.com/natenka/pyneng-book/master/images/08_list_comp.png
 
 В list comprehensions можно использовать выражение if. Таким образом
 можно добавлять в список только некоторые объекты.
@@ -65,14 +72,13 @@ List comprehensions (генераторы списков)
 
 .. code:: python
 
-    In [6]: items = ['10', '20', 'a', '30', 'b', '40']
+    items = ['10', '20', 'a', '30', 'b', '40']
 
-    In [7]: only_digits = []
+    only_digits = []
 
-    In [8]: for item in items:
-       ...:     if item.isdigit():
-       ...:         only_digits.append(int(item))
-       ...:
+    for item in items:
+        if item.isdigit():
+            only_digits.append(int(item))
 
     In [9]: print(only_digits)
     [10, 20, 30, 40]
@@ -81,18 +87,22 @@ List comprehensions (генераторы списков)
 
 .. code:: python
 
-    In [10]: items = ['10', '20', 'a', '30', 'b', '40']
-
-    In [11]: only_digits = [int(item) for item in items if item.isdigit()]
+    items = ['10', '20', 'a', '30', 'b', '40']
+    only_digits = [int(item) for item in items if item.isdigit()]
 
     In [12]: print(only_digits)
     [10, 20, 30, 40]
+
+Соответствие между циклом с условием и генератором списка с условием:
+
+.. figure:: https://raw.githubusercontent.com/natenka/pyneng-book/master/images/08_list_comp_if.png
 
 Конечно, далеко не все циклы можно переписать как генератор списка, но
 когда это можно сделать, и при этом выражение не усложняется, лучше
 использовать генераторы списка.
 
 .. note::
+
     В Python генераторы списка могут также заменить функции filter и map
     и считаются более понятными вариантами решения.
 
@@ -101,44 +111,44 @@ List comprehensions (генераторы списков)
 
 .. code:: python
 
-    In [13]: london_co = {
-        ...:     'r1' : {
-        ...:     'hostname': 'london_r1',
-        ...:     'location': '21 New Globe Walk',
-        ...:     'vendor': 'Cisco',
-        ...:     'model': '4451',
-        ...:     'IOS': '15.4',
-        ...:     'IP': '10.255.0.1'
-        ...:     },
-        ...:     'r2' : {
-        ...:     'hostname': 'london_r2',
-        ...:     'location': '21 New Globe Walk',
-        ...:     'vendor': 'Cisco',
-        ...:     'model': '4451',
-        ...:     'IOS': '15.4',
-        ...:     'IP': '10.255.0.2'
-        ...:     },
-        ...:     'sw1' : {
-        ...:     'hostname': 'london_sw1',
-        ...:     'location': '21 New Globe Walk',
-        ...:     'vendor': 'Cisco',
-        ...:     'model': '3850',
-        ...:     'IOS': '3.6.XE',
-        ...:     'IP': '10.255.0.101'
-        ...:     }
-        ...: }
+    london_co = {
+        'r1' : {
+        'hostname': 'london_r1',
+        'location': '21 New Globe Walk',
+        'vendor': 'Cisco',
+        'model': '4451',
+        'ios': '15.4',
+        'ip': '10.255.0.1'
+        },
+        'r2' : {
+        'hostname': 'london_r2',
+        'location': '21 New Globe Walk',
+        'vendor': 'Cisco',
+        'model': '4451',
+        'ios': '15.4',
+        'ip': '10.255.0.2'
+        },
+        'sw1' : {
+        'hostname': 'london_sw1',
+        'location': '21 New Globe Walk',
+        'vendor': 'Cisco',
+        'model': '3850',
+        'ios': '3.6.XE',
+        'ip': '10.255.0.101'
+        }
+    }
 
-    In [14]: [london_co[device]['IOS'] for device in london_co]
+    In [14]: [london_co[device]['ios'] for device in london_co]
     Out[14]: ['15.4', '15.4', '3.6.XE']
 
-    In [15]: [london_co[device]['IP'] for device in london_co]
+    In [15]: [london_co[device]['ip'] for device in london_co]
     Out[15]: ['10.255.0.1', '10.255.0.2', '10.255.0.101']
 
-На самом деле, синтаксис генератора списка выглядит так:
+Полный синтаксис генератора списка выглядит так:
 
 .. code:: python
 
-    [expression for item1 in iterable1 if condition1 
+    [expression for item1 in iterable1 if condition1
                 for item2 in iterable2 if condition2
                 ...
                 for itemN in iterableN if conditionN ]
@@ -150,19 +160,19 @@ VLAN'ами:
 
 .. code:: python
 
-    In [16]: vlans = [[10,21,35], [101, 115, 150], [111, 40, 50]]
+    vlans = [[10, 21, 35], [101, 115, 150], [111, 40, 50]]
 
 Из этого списка надо сформировать один плоский список с номерами VLAN.
 Первый вариант — с помощью циклов for:
 
 .. code:: python
 
-    In [17]: result = []
+    result = []
 
-    In [18]: for vlan_list in vlans:
-        ...:     for vlan in vlan_list:
-        ...:         result.append(vlan)
-        ...:
+    for vlan_list in vlans:
+        for vlan in vlan_list:
+            result.append(vlan)
+
 
     In [19]: print(result)
     [10, 21, 35, 101, 115, 150, 111, 40, 50]
@@ -171,23 +181,25 @@ VLAN'ами:
 
 .. code:: python
 
-    In [20]: vlans = [[10,21,35], [101, 115, 150], [111, 40, 50]]
-
-    In [21]: result = [vlan for vlan_list in vlans for vlan in vlan_list]
+    vlans = [[10, 21, 35], [101, 115, 150], [111, 40, 50]]
+    result = [vlan for vlan_list in vlans for vlan in vlan_list]
 
     In [22]: print(result)
     [10, 21, 35, 101, 115, 150, 111, 40, 50]
+
+Соответствие между двумя вложенными циклами и генератором списка с двумя циклами:
+
+.. figure:: https://raw.githubusercontent.com/natenka/pyneng-book/master/images/08_list_comp_for_for.png
 
 Можно одновременно проходиться по двум последовательностям, используя
 zip:
 
 .. code:: python
 
-    In [23]: vlans = [100, 110, 150, 200]
+    vlans = [100, 110, 150, 200]
+    names = ['mngmt', 'voice', 'video', 'dmz']
 
-    In [24]: names = ['mngmt', 'voice', 'video', 'dmz']
-
-    In [25]: result = ['vlan {}\n name {}'.format(vlan, name) for vlan, name in zip(vlans, names)]
+    result = ['vlan {}\n name {}'.format(vlan, name) for vlan, name in zip(vlans, names)]
 
     In [26]: print('\n'.join(result))
     vlan 100
@@ -209,11 +221,10 @@ Dict comprehensions (генераторы словарей)
 
 .. code:: python
 
-    In [27]: d = {}
+    d = {}
 
-    In [28]: for num in range(1, 11):
-        ...:     d[num] = num**2
-        ...:
+    for num in range(1, 11):
+        d[num] = num**2
 
     In [29]: print(d)
     {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
@@ -222,7 +233,7 @@ Dict comprehensions (генераторы словарей)
 
 .. code:: python
 
-    In [30]: d = {num: num**2 for num in range(1, 11)}
+    d = {num: num**2 for num in range(1, 11)}
 
     In [31]: print(d)
     {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
@@ -233,19 +244,17 @@ Dict comprehensions (генераторы словарей)
 
 .. code:: python
 
-    In [32]: r1 = {'IOS': '15.4',
-        ...:       'IP': '10.255.0.1',
-        ...:       'hostname': 'london_r1',
-        ...:       'location': '21 New Globe Walk',
-        ...:       'model': '4451',
-        ...:       'vendor': 'Cisco'}
-        ...:
+    r1 = {'ios': '15.4',
+          'ip': '10.255.0.1',
+          'hostname': 'london_r1',
+          'location': '21 New Globe Walk',
+          'model': '4451',
+          'vendor': 'Cisco'}
 
-    In [33]: lower_r1 = {}
+    lower_r1 = {}
 
-    In [34]: for key, value in r1.items():
-        ...:     lower_r1[key.lower()] = value
-        ...:
+    for key, value in r1.items():
+        lower_r1[key.lower()] = value
 
     In [35]: lower_r1
     Out[35]:
@@ -260,15 +269,14 @@ Dict comprehensions (генераторы словарей)
 
 .. code:: python
 
-    In [36]: r1 = {'IOS': '15.4',
-        ...:   'IP': '10.255.0.1',
-        ...:   'hostname': 'london_r1',
-        ...:   'location': '21 New Globe Walk',
-        ...:   'model': '4451',
-        ...:   'vendor': 'Cisco'}
-        ...:
+    r1 = {'ios': '15.4',
+      'ip': '10.255.0.1',
+      'hostname': 'london_r1',
+      'location': '21 New Globe Walk',
+      'model': '4451',
+      'vendor': 'Cisco'}
 
-    In [37]: lower_r1 = {key.lower(): value for key, value in r1.items()}
+    lower_r1 = {key.lower(): value for key, value in r1.items()}
 
     In [38]: lower_r1
     Out[38]:
@@ -284,40 +292,39 @@ Dict comprehensions (генераторы словарей)
 
 .. code:: python
 
-    In [39]: london_co = {
-        ...:     'r1' : {
-        ...:     'hostname': 'london_r1',
-        ...:     'location': '21 New Globe Walk',
-        ...:     'vendor': 'Cisco',
-        ...:     'model': '4451',
-        ...:     'IOS': '15.4',
-        ...:     'IP': '10.255.0.1'
-        ...:     },
-        ...:     'r2' : {
-        ...:     'hostname': 'london_r2',
-        ...:     'location': '21 New Globe Walk',
-        ...:     'vendor': 'Cisco',
-        ...:     'model': '4451',
-        ...:     'IOS': '15.4',
-        ...:     'IP': '10.255.0.2'
-        ...:     },
-        ...:     'sw1' : {
-        ...:     'hostname': 'london_sw1',
-        ...:     'location': '21 New Globe Walk',
-        ...:     'vendor': 'Cisco',
-        ...:     'model': '3850',
-        ...:     'IOS': '3.6.XE',
-        ...:     'IP': '10.255.0.101'
-        ...:     }
-        ...: }
+    london_co = {
+        'r1' : {
+        'hostname': 'london_r1',
+        'location': '21 New Globe Walk',
+        'vendor': 'Cisco',
+        'model': '4451',
+        'ios': '15.4',
+        'ip': '10.255.0.1'
+        },
+        'r2' : {
+        'hostname': 'london_r2',
+        'location': '21 New Globe Walk',
+        'vendor': 'Cisco',
+        'model': '4451',
+        'ios': '15.4',
+        'ip': '10.255.0.2'
+        },
+        'sw1' : {
+        'hostname': 'london_sw1',
+        'location': '21 New Globe Walk',
+        'vendor': 'Cisco',
+        'model': '3850',
+        'ios': '3.6.XE',
+        'ip': '10.255.0.101'
+        }
+    }
 
-    In [40]: lower_london_co = {}
+    lower_london_co = {}
 
-    In [41]: for device, params in london_co.items():
-        ...:     lower_london_co[device] = {}
-        ...:     for key, value in params.items():
-        ...:         lower_london_co[device][key.lower()] = value
-        ...:
+    for device, params in london_co.items():
+        lower_london_co[device] = {}
+        for key, value in params.items():
+            lower_london_co[device][key.lower()] = value
 
     In [42]: lower_london_co
     Out[42]:
@@ -344,7 +351,8 @@ Dict comprehensions (генераторы словарей)
 
 .. code:: python
 
-    In [43]: result = {device: {key.lower(): value for key, value in params.items()} for device, params in london_co.items()}
+    result = {device: {key.lower(): value for key, value in params.items()}
+              for device, params in london_co.items()}
 
     In [44]: result
     Out[44]:
@@ -376,9 +384,9 @@ Set comprehensions (генераторы множеств)
 
 .. code:: python
 
-    In [45]: vlans = [10, '30', 30, 10, '56']
+    vlans = [10, '30', 30, 10, '56']
 
-    In [46]: unique_vlans = {int(vlan) for vlan in vlans}
+    unique_vlans = {int(vlan) for vlan in vlans}
 
     In [47]: unique_vlans
     Out[47]: {10, 30, 56}
@@ -387,13 +395,12 @@ Set comprehensions (генераторы множеств)
 
 .. code:: python
 
-    In [48]: vlans = [10, '30', 30, 10, '56']
+    vlans = [10, '30', 30, 10, '56']
 
-    In [49]: unique_vlans = set()
+    unique_vlans = set()
 
-    In [50]: for vlan in vlans:
-        ...:     unique_vlans.add(int(vlan))
-        ...:
+    for vlan in vlans:
+        unique_vlans.add(int(vlan))
 
     In [51]: unique_vlans
     Out[51]: {10, 30, 56}
