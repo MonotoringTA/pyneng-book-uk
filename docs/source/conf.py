@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Python для мережевих інженерів'
-copyright = '2015-2022, Natasha Samoylenko'
-author = 'Natasha Samoylenko'
+copyright = '2015-2022, Nataliya Samoylenko'
+author = 'Nataliya Samoylenko'
 
 # The full version, including alpha/beta/rc tags
 release = '3.0'

@@ -1,14 +1,9 @@
 
 .. _download:
 
-Скачать PDF/Epub
+Завантажити PDF/Epub
 ================
 
-Нажмите в нижнем левом углу на "Read the Docs" и в открывшейся панели
-нажмите PDF или Epub.
+У мобільній версії спочатку треба натиснути на іконку "Гамбургер".
 
-.. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/download1.png
-  :width: 400
-
-.. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/download2.png
-  :width: 400
+Натисніть у нижньому лівому куті на "Read the Docs" і на панелі натисніть PDF або Epub.
