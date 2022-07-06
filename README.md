@@ -5,7 +5,6 @@
 
 ## Додаткові ресурси
 
-* [Завдання до книги/курсу](https://github.com/natenka/pyneng-examples-exercises)
+* [Завдання до книги](https://github.com/natenka/pyneng-examples-exercises)
 * [Добірка ресурсів](https://natenka.github.io/pyneng-resources/)
-* [Що подивитись, якщо мої лекції не підходять](https://natenka.github.io/pyneng/pyneng-course/)
 
