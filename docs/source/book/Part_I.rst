@@ -20,4 +20,4 @@ I. Основи Python
    05_basic_scripts/index.rst
    06_control_structures/index.rst
    07_files/index.rst
-   08_python_basic_examples/index.rst
+   08_useful_basics/index.rst
