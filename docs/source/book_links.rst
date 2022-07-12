@@ -6,7 +6,7 @@
 -  `репозиторій із прикладами, завданнями <https://github.com/natenka/pyneng-examples-exercises/>`__
 -  `репозиторій із відповідями <https://github.com/natenka/pyneng-answers/>`__
 -  `питання (міні-завдання) <https://github.com/natenka/pyneng-examples-exercises/tree/master/tests>`__
--  `задати питання можна в `Github Discussions <https://github.com/natenka/pyneng-book-uk/discussions>`__.
+-  `задати питання можна в Github Discussions <https://github.com/natenka/pyneng-book-uk/discussions>`__.
 
 
 Підготовка робочого оточення

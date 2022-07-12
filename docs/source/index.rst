@@ -34,3 +34,14 @@ Python для мережевих інженерів
    book/Part_VIII
    resources/README
    download
+
+.. toctree::
+   :caption: Ресурси
+   :maxdepth: 1
+   :hidden:
+
+   Приклади, завдання <https://github.com/natenka/pyneng-examples-exercises/>
+   Репозиторій із відповідями <https://github.com/natenka/pyneng-answers/>
+   Міні-завдання <https://github.com/natenka/pyneng-examples-exercises/tree/master/tests>
+   Задати питання <https://github.com/natenka/pyneng-book-uk/discussions>
+
