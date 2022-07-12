@@ -21,9 +21,6 @@ project = 'Python для мережевих інженерів'
 copyright = '2015-2022, Nataliya Samoylenko'
 author = 'Nataliya Samoylenko'
 
-# The full version, including alpha/beta/rc tags
-release = '3.0'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -60,8 +57,10 @@ html_theme = 'furo'
 #}
 
 html_theme_options = {
-    'prev_next_buttons_location': 'both',
+    "prev_next_buttons_location": "both",
+    "navigation_with_keys": True,
     "top_of_page_button": None,
+    "sidebar_hide_name": True,
     "announcement": (
         "Книга у процесі перекладу українською мовою. Готові такі частини: "
         "Вступ, Ресурси для навчання за книгою; розділи: 1, 2, 3."
