@@ -60,7 +60,12 @@ html_theme = 'furo'
 #}
 
 html_theme_options = {
-'prev_next_buttons_location': 'both',
+    'prev_next_buttons_location': 'both',
+    "top_of_page_button": None,
+    "announcement": (
+        "Книга у процесі перекладу українською мовою. Готові такі частини: "
+        "Вступ, Ресурси для навчання за книгою; розділи: 1, 2, 3."
+    ),
 }
 
 
@@ -70,4 +75,3 @@ html_theme_options = {
 html_static_path = ['_static']
 html_last_updated_fmt = ''
 
-# -- Options for LaTeX output ---------------------------------------------
