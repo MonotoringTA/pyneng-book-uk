@@ -21,6 +21,7 @@ Python для мережевих інженерів
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
    about
    book_links
