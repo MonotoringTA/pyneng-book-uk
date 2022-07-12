@@ -60,7 +60,6 @@ html_theme_options = {
     "prev_next_buttons_location": "both",
     "navigation_with_keys": True,
     "top_of_page_button": None,
-    "sidebar_hide_name": True,
     "announcement": (
         "Книга у процесі перекладу українською мовою. Готові такі частини: "
         "Вступ, Ресурси для навчання за книгою; розділи: 1, 2, 3."
