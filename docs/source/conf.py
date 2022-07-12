@@ -69,6 +69,14 @@ html_theme_options = {
         "Книга у процесі перекладу українською мовою. Готові такі частини: "
         "Вступ, Ресурси для навчання за книгою; розділи: 1, 2, 3."
     ),
+    "light_css_variables": {
+        "color-brand-primary": "#336790",  # "blue"
+        "color-brand-content": "#336790",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#E5B62F",  # "yellow"
+        "color-brand-content": "#E5B62F",
+    },
 }
 
 
