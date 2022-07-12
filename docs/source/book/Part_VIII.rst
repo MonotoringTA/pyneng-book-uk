@@ -6,6 +6,7 @@ VIII. Дополнительная информация
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    additional_info/venvwrapper
    additional_info/argparse

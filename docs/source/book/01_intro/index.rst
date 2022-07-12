@@ -32,6 +32,7 @@
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    work_env
    os_and_editor

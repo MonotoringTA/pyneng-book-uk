@@ -41,7 +41,5 @@ Python для мережевих інженерів
    :hidden:
 
    Приклади, завдання <https://github.com/natenka/pyneng-examples-exercises/>
-   Репозиторій із відповідями <https://github.com/natenka/pyneng-answers/>
-   Міні-завдання <https://github.com/natenka/pyneng-examples-exercises/tree/master/tests>
    Задати питання <https://github.com/natenka/pyneng-book-uk/discussions>
 
